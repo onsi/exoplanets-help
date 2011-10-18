@@ -1,0 +1,150 @@
+
+      <html>
+  <head>
+  <link href="/Users/onsi/Sites/explorer-help/preview/help.css" rel="stylesheet" type="text/css" />
+  <script src="/Users/onsi/Sites/explorer-help/preview/jquery.js" type="text/javascript"></script>
+  <script src="/Users/onsi/Sites/explorer-help/preview/help.js" type="text/javascript"></script>
+  </head>
+  <body>
+  <div class="header">
+      <div class="bold header-link">Kepler Explorer</div>
+      <div class="header-link">Help Preview</div>
+  </div>
+
+    <div class='sidebar'>
+        <ul>
+            
+            
+            <li class="divider">Table</li>
+            
+            
+            
+            <a href="../table/tutorial_videos.html">
+            <li class="current">Tutorial Videos</li>
+            </a>
+            
+            
+            
+            <li class="divider">Plots</li>
+            
+            
+            
+            <a href="../plot/getting_started.html">
+            <li class="help-link">Getting Started</li>
+            </a>
+            
+            
+            
+            <a href="../plot/scatter_plots.html">
+            <li class="help-link">Scatter Plots</li>
+            </a>
+            
+            
+            
+            <a href="../plot/histograms.html">
+            <li class="help-link">Histograms</li>
+            </a>
+            
+            
+            
+            <li class="divider">Common</li>
+            
+            
+            
+            <a href="../common/data.html">
+            <li class="help-link">Data Columns</li>
+            </a>
+            
+            
+            
+            <a href="../common/filter.html">
+            <li class="help-link">Filter Language</li>
+            </a>
+            
+            
+        </ul>
+    </div>
+    <div class="content">
+    <h1>Table Tutorial Videos</h1>
+
+<div id="videos">
+    <div id="video-sidebar">
+        <ul>
+            <li class="divider">The Basics</li>
+            <li data-youtube="orJmlzrXHk8">Adding, Removing, and Reordering Columns</li>
+            <li data-youtube="UOf2qbD-LUk">Toggling Errors and Changing Units</li>
+            <li data-youtube="Np_S_dB5wOE">Viewing Detail Pages</li>
+            <li data-youtube="B7nPzhr-Mqk">Exporting Data</li>
+            <li class="divider">Advanced Features</li>
+            <li data-youtube="aGfvsffDfkA">Filtering the Table</li>
+            <li data-youtube="kmYsK6ZoUvM">Saving Table Views for Later Use</li>
+            <li data-youtube="-dJIbgxHoLA">Adding Custom Columns</li>
+        </ul>
+    </div>
+    <div id="video-main">
+        <div id="video">
+            <iframe id="video-player" width="640" height="385" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div id="note">
+            <div data-youtube="orJmlzrXHk8" class="hidden">
+                <h4>Adding, Removing, and Reordering Columns</h4>
+                <p class="addenda">
+                    You can also sort the table by a particular column by clicking the column header to toggle through ascending order, descending order, and unsorted.
+                </p>
+            </div>
+            <div data-youtube="UOf2qbD-LUk" class="hidden">
+                <h4>Toggling Errors and Changing Units</h4>
+                <p class="addenda">
+                    A note about precision: columns without uncertainties are rendered to the best known precision available in the Kepler database.  Columns with uncertainties are rendered to the closest appropriate precision given the associated uncertainty.  For example, the value 10.5123156 &plusmn; 0.2 would be rendered 10.51 &plusmn; 0.2.
+                </p>
+                <p class="addenda">
+                    When changing units the column automatically adjusts the precision to take into account the scaling involved with the unit change.
+                </p>
+            </div>
+            <div data-youtube="Np_S_dB5wOE" class="hidden">
+                <h4>Viewing Detail Pages</h4>
+                <p class="addenda">
+                     In addition, the Kepler Input Catalog ID (KIC) column, links directly to the NStED entry for each KOI.  If you add the KIC column to the table you'll be able to quickly jump to the NStED entry for any object without having to visit its detail page.
+                </p>
+            </div>
+            <div data-youtube="B7nPzhr-Mqk" class="hidden">
+                <h4>Exporting Data</h4>
+                <p class="addenda">
+                    Some browsers will automatically download the csv file and save it to your default downloads folder.  Others will display the csv file as shown in the video, you will need to choose "Save Page As..." from the File menu to save the resulting data to disk.
+                </p>
+                <p class="addenda">
+                    Also, uncertainty data is only output if the &plusmn; icon is toggled on in the table.  Again, what you see is what you get -- if it's in the table view, it'll be in the CSV output.
+                </p>
+            </div>
+            <div data-youtube="aGfvsffDfkA" class="hidden">
+                <h4>Filtering the Table</h4>
+                <p class="addenda">
+                    For additional documentation on the filter query language, including a list of available functions, a list of all available units, and a number of example filters, visit the <a href="../common/filter">Filter Language</a> help page.
+                </p>
+                <p class="addenda">
+                    For a list of all available columns in the Kepler database, visit the <a href="../common/data">Data Columns</a> help page.
+                </p>
+            </div>
+            <div data-youtube="kmYsK6ZoUvM" class="hidden">
+                <h4>Saving Table Views for Later Use</h4>
+                <p class="addenda">
+                    The table views are stored in one of your browser's local storage buckets (either as cookies or using the HTM5 local storage functionality).  This means that you must use the <strong>same</strong> browser on the <strong>same</strong> computer to load saved table views.  It also means that resetting your browser's cookies and/or local storage will destroy your saved tables.
+                </p>
+            </div>
+            <div data-youtube="-dJIbgxHoLA" class="hidden">
+                <h4>Adding Custom Columns</h4>
+                <p class="addenda">
+                    Custom columns are not automatically saved -- meaning if you reload the table view your custom columns will be lost.  To save them you must save the entire table view.  See "Saving Table Views for Later Use."
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    
+  </body>
+  </html>
+
+  

@@ -1,0 +1,314 @@
+<h1>Data Columns</h1>
+
+<p>
+    Here is a list of all available data columns:
+</p>
+
+<table>
+    <tr>
+        <th>Column ID</th>
+        <th>Name</th>
+        <th>Units</th>
+        <th>Description</th>
+    </tr>
+    
+    <tr>
+        <td class='divider' colspan=4>Info Columns</td>
+    </tr>
+    <tr>
+    	<td>KOI</td>
+    	<td>KOI</td>
+    	<td></td>
+    	<td>Kepler Object Of Interest Number</td>
+    </tr>
+    <tr>
+    	<td>KIC</td>
+    	<td>Kepler Input Catalog ID</td>
+    	<td></td>
+    	<td>Kepler Input Catalog Identifier (links to NStED catalog)</td>
+    </tr>
+    <tr>
+    	<td>KOI_SYS</td>
+    	<td>KOI System</td>
+    	<td></td>
+    	<td>The system component of the KOI</td>
+    </tr>
+    <tr>
+    	<td>KOI_OBJ</td>
+    	<td>KOI Object</td>
+    	<td></td>
+    	<td>The object component of the KOI</td>
+    </tr>
+    <tr>
+    	<td>FIRST_OBJECT</td>
+    	<td>First Object?</td>
+    	<td></td>
+    	<td>If Yes, this KOI is the first object in the KOI system. Add "FIRST_OBJECT"  in the Filter if you want to ensure that each KOI system appears only once in the table or plot.</td>
+    </tr>
+    <tr>
+    	<td>N_OBJ</td>
+    	<td>Number of Objects</td>
+    	<td></td>
+    	<td>The number of objects in the KOI system is a useful quantity when generating plots.</td>
+    </tr>
+    <tr>
+    	<td>RA</td>
+    	<td>Right Ascension</td>
+    	<td>Hours</td>
+    	<td>Right Ascension (J2000)</td>
+    </tr>
+    <tr>
+    	<td>DEC</td>
+    	<td>Declination</td>
+    	<td>Degrees</td>
+    	<td>Declination (J2000)</td>
+    </tr>
+    <tr>
+    	<td>HAB_ZONE</td>
+    	<td>Habitable Zone?</td>
+    	<td></td>
+    	<td>If Yes, this planet might be in the habitable zone.  The criterion for inclusion the habitable zone is that 183 &le; TPLANET &le; 373.  See <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for for discussion.</td>
+    </tr>
+    
+    <tr>
+        <td class='divider' colspan=4>Planet Properties</td>
+    </tr>
+    <tr>
+    	<td>RPLANET</td>
+    	<td>Planetary Radius</td>
+    	<td>Earth Radii</td>
+    	<td>Planetary Radius</td>
+    </tr>
+    <tr>
+    	<td>A</td>
+    	<td>Semi-Major Axis</td>
+    	<td>AU</td>
+    	<td>Semi-major axis of orbit. This is the longer dimension of the ellipse-shaped orbit, based on Newton's generalization of Kepler's third law and the stellar mass.  For a circular orbit, A is the orbit radius.</td>
+    </tr>
+    <tr>
+    	<td>AR</td>
+    	<td>a/R*</td>
+    	<td></td>
+    	<td>Ratio of semi-major axis to stellar radius. Assuming zero eccentricity, a parameter derived from the lightcurve. Note for planets in non-circular orbits, a/R* is the scaled planet-star separation at the time of transit.</td>
+    </tr>
+    <tr>
+    	<td>UAR</td>
+    	<td>Uncertainty in AR</td>
+    	<td></td>
+    	<td>Uncertainty in AR</td>
+    </tr>
+    <tr>
+    	<td>RR</td>
+    	<td>r/R*</td>
+    	<td></td>
+    	<td>Ratio of planet radius to stellar radius</td>
+    </tr>
+    <tr>
+    	<td>URR</td>
+    	<td>Uncertainty in RR</td>
+    	<td></td>
+    	<td>Uncertainty in RR</td>
+    </tr>
+    <tr>
+    	<td>TPLANET</td>
+    	<td>Planet Temperature</td>
+    	<td>&deg;Kelvin</td>
+    	<td>Equilibrium temperature of planet. See <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for discussion.</td>
+    </tr>
+    
+    <tr>
+        <td class='divider' colspan=4>Transit Properties</td>
+    </tr>
+    <tr>
+    	<td>T0</td>
+    	<td>Time of Transit Center</td>
+    	<td>BJD-2454900</td>
+    	<td>Time of a transit center; BJD-2454900. Based on a linear fit to all observed transits.</td>
+    </tr>
+    <tr>
+    	<td>UT0</td>
+    	<td>Uncertainty in T0</td>
+    	<td>Days</td>
+    	<td>Uncertainty in T0</td>
+    </tr>
+    <tr>
+    	<td>DUR</td>
+    	<td>Transit Duration</td>
+    	<td>Hours</td>
+    	<td>Transit duration, first contact to last contact.</td>
+    </tr>
+    <tr>
+    	<td>PER</td>
+    	<td>Period</td>
+    	<td>Days</td>
+    	<td>Average interval between transits. Based on a linear fit to all observed transits.</td>
+    </tr>
+    <tr>
+    	<td>UPER</td>
+    	<td>Uncertainty in PER</td>
+    	<td>Days</td>
+    	<td>Uncertainty in PER</td>
+    </tr>
+    <tr>
+    	<td>DEPTH</td>
+    	<td>Transit Depth</td>
+    	<td>Parts-per-million</td>
+    	<td>Transit depth at center of transit.</td>
+    </tr>
+    <tr>
+    	<td>IMPACT</td>
+    	<td>Impact Parameter</td>
+    	<td></td>
+    	<td>Impact parameter of transit. Note that there is a strong co-variance between the Impact Parameter b and a/R*.</td>
+    </tr>
+    <tr>
+    	<td>UIMPACT</td>
+    	<td>Uncertainty in IMPACT</td>
+    	<td></td>
+    	<td>Uncertainty in IMPACT</td>
+    </tr>
+    <tr>
+    	<td>SNR</td>
+    	<td>Transit Signal-to-Noise Ratio</td>
+    	<td></td>
+    	<td>Total signal to noise ratio of all transits detected. SNR = DEPTH/(STD*sqrt(N)) where STD is the standard deviation of all data outside of transits.</td>
+    </tr>
+    
+    <tr>
+        <td class='divider' colspan=4>Stellar Properties</td>
+    </tr>
+    <tr>
+    	<td>RSTAR</td>
+    	<td>Stellar Radius</td>
+    	<td>Solar Radii</td>
+    	<td>Stellar radius reported by KIC. If TSTAR_FLAG = 1, then R is based on J-K interpolation.</td>
+    </tr>
+    <tr>
+    	<td>MSTAR</td>
+    	<td>Stellar Mass</td>
+    	<td>Solar Masses</td>
+    	<td>Stellar mass derived from log(g) and stellar radius.</td>
+    </tr>
+    <tr>
+    	<td>TSTAR</td>
+    	<td>Tstar</td>
+    	<td>&deg;Kelvin</td>
+    	<td>Effective Temperature of host star as reported in the KIC. If TSTAR_FLAG= 1, then TSTAR , LOGG, RSTAR derived using KIC J-K colour and linear interpolation of luminosity class V stellar properties of Schmidt-Kaler (1982).</td>
+    </tr>
+    <tr>
+    	<td>TSTAR_FLAG</td>
+    	<td>T<sub>star</sub> Flag</td>
+    	<td></td>
+    	<td>If Yes, then TSTAR, LOGG, RSTAR are derived using KIC J-K colour and linear interpolation of luminosity class V stellar properties of Schmidt-Kaler (1982).</td>
+    </tr>
+    <tr>
+    	<td>LOGG</td>
+    	<td>Log(g)</td>
+    	<td>CGS units</td>
+    	<td>Surface gravity reported by KIC. If TSTAR_FLAG = 1, then log(g) is based on J-K interpolation. (cgs units)</td>
+    </tr>
+    <tr>
+    	<td>KMAG</td>
+    	<td>Kepler Magnitude</td>
+    	<td>Kepler Magnitude</td>
+    	<td>Kepler Magnitude</td>
+    </tr>
+    <tr>
+    	<td>CDPP</td>
+    	<td>CDPP</td>
+    	<td>Parts-per-million</td>
+    	<td>6 hr Combined Differential Photometric Precision from Quarter 3</td>
+    </tr>
+    
+    <tr>
+        <td class='divider' colspan=4>Status</td>
+    </tr>
+    <tr>
+    	<td>VETTING</td>
+    	<td>Vetting Status</td>
+    	<td></td>
+    	<td>Vetting status of KOI:<br>Confirmed: Confirmed and published planet.<br>Strong Candidate: Strong probability candidate, cleanly passes tests that were applied.<br>Moderate Candidate: Moderate probability candidate, not all tests cleanly passed but no definite test failures.<br>Insufficient Followup: Insufficient follow-up to perform full suite of vetting tests.</td>
+    </tr>
+    <tr>
+    	<td>VETTING_FLAG</td>
+    	<td>Vetting Flag</td>
+    	<td></td>
+    	<td>Numerical representation of Vetting Status<br>1: Confirmed and published planet.<br>2: Strong probability candidate, cleanly passes tests that were applied.<br>3: Moderate probability candidate, not all tests cleanly passed but no definite test failures.<br>4: Insufficient follow-up to perform full suite of vetting tests.</td>
+    </tr>
+    <tr>
+    	<td>CONFIRMED</td>
+    	<td>Confirmed?</td>
+    	<td></td>
+    	<td>If Yes, this KOI is a confirmed and published planet.</td>
+    </tr>
+    <tr>
+    	<td>STRONG</td>
+    	<td>Strong Candidate?</td>
+    	<td></td>
+    	<td>If Yes, this KOI is a strong probability candidate that cleanly passes tests that were applied.</td>
+    </tr>
+    <tr>
+    	<td>MODERATE</td>
+    	<td>Moderate Candidate?</td>
+    	<td></td>
+    	<td>If Yes, this KOI is a moderate probability candidate did not pass all tests cleanly but has no definite test failures.</td>
+    </tr>
+    <tr>
+    	<td>NEEDS_FOLLOWUP</td>
+    	<td>Needs Followup?</td>
+    	<td></td>
+    	<td>If Yes, there has been insufficient follow-up to perform a full suite of vetting tests.</td>
+    </tr>
+    <tr>
+    	<td>SINGLE_TRANSIT</td>
+    	<td>Single Transit?</td>
+    	<td></td>
+    	<td>If Yes, this KOI was detected on the basis of a single transit with the period derived from the transit duration and stellar radius.</td>
+    </tr>
+    <tr>
+    	<td>EBPROB</td>
+    	<td>Eclipsing Binary Probability</td>
+    	<td></td>
+    	<td>Probability of background eclipsing binary. Confused with planet's host star (see <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for discussion).</td>
+    </tr>
+    
+    <tr>
+        <td class='divider' colspan=4>Observations</td>
+    </tr>
+    <tr>
+    	<td>RECON</td>
+    	<td>Reconnaissance Spectra?</td>
+    	<td></td>
+    	<td>If Yes, reconnaissance spectra of this KOI have been taken.</td>
+    </tr>
+    <tr>
+    	<td>ADAPTIVE</td>
+    	<td>Adaptive Optics Observations?</td>
+    	<td></td>
+    	<td>If Yes, adaptive optics observations of this KOI have been taken.</td>
+    </tr>
+    <tr>
+    	<td>SPECKLE</td>
+    	<td>Speckle Observations?</td>
+    	<td></td>
+    	<td>If Yes, speckle observations of this KOI have been taken.</td>
+    </tr>
+    <tr>
+    	<td>RV10</td>
+    	<td>10 m/s RV Spectra?</td>
+    	<td></td>
+    	<td>If Yes, 10 m/s RV spectra of this KOI have been taken.</td>
+    </tr>
+    <tr>
+    	<td>RV2</td>
+    	<td>2 m/s RV Spectra?</td>
+    	<td></td>
+    	<td>If Yes, 2 m/s RV spectra of this KOI have been taken.</td>
+    </tr>
+    <tr>
+    	<td>NOOBS</td>
+    	<td>No Observations?</td>
+    	<td></td>
+    	<td>If Yes, this KOI has not had any observations taken yet.</td>
+    </tr>
+</table>

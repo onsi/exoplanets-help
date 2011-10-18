@@ -1,0 +1,44 @@
+plots:
+    - divider: Plots
+    - name: Getting Started
+      link: plot/getting_started
+    - name: Scatter Plots
+      link: plot/scatter_plots
+    - name: Histograms
+      link: plot/histograms
+    - divider: Common
+    - name: Data Columns
+      link: common/data
+    - name: Filter Language
+      link: common/filter
+table:
+    - divider: Table
+    - name: Tutorial Videos
+      link: table/tutorial_videos
+    - divider: Common
+    - name: Data Columns
+      link: common/data
+    - name: Filter Language
+      link: common/filter
+detail:
+    - name: Data Columns
+      link: common/data
+    - name: Filter Language
+      link: common/filter
+all:
+    - divider: Table
+    - name: Tutorial Videos
+      link: table/tutorial_videos
+    - divider: Plots
+    - name: Getting Started
+      link: plot/getting_started
+    - name: Scatter Plots
+      link: plot/scatter_plots
+    - name: Histograms
+      link: plot/histograms
+    - divider: Common
+    - name: Data Columns
+      link: common/data
+    - name: Filter Language
+      link: common/filter
+    

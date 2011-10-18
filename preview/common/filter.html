@@ -1,0 +1,359 @@
+
+      <html>
+  <head>
+  <link href="/Users/onsi/Sites/explorer-help/preview/help.css" rel="stylesheet" type="text/css" />
+  <script src="/Users/onsi/Sites/explorer-help/preview/jquery.js" type="text/javascript"></script>
+  <script src="/Users/onsi/Sites/explorer-help/preview/help.js" type="text/javascript"></script>
+  </head>
+  <body>
+  <div class="header">
+      <div class="bold header-link">Kepler Explorer</div>
+      <div class="header-link">Help Preview</div>
+  </div>
+
+    <div class='sidebar'>
+        <ul>
+            
+            
+            <li class="divider">Table</li>
+            
+            
+            
+            <a href="../table/tutorial_videos.html">
+            <li class="help-link">Tutorial Videos</li>
+            </a>
+            
+            
+            
+            <li class="divider">Plots</li>
+            
+            
+            
+            <a href="../plot/getting_started.html">
+            <li class="help-link">Getting Started</li>
+            </a>
+            
+            
+            
+            <a href="../plot/scatter_plots.html">
+            <li class="help-link">Scatter Plots</li>
+            </a>
+            
+            
+            
+            <a href="../plot/histograms.html">
+            <li class="help-link">Histograms</li>
+            </a>
+            
+            
+            
+            <li class="divider">Common</li>
+            
+            
+            
+            <a href="../common/data.html">
+            <li class="help-link">Data Columns</li>
+            </a>
+            
+            
+            
+            <a href="../common/filter.html">
+            <li class="current">Filter Language</li>
+            </a>
+            
+            
+        </ul>
+    </div>
+    <div class="content">
+    <H1>The Filter and Query Language</H1>
+    <a name="example_queries" class="overview"></a>
+    <H2>Overview</H2>
+    <p>
+        The Kepler Data Explorer has been designed with two goals in mind: to make access to the Kepler Database fun and straightforward, and to enable users to quickly build customizable, powerful, and useful filters and views of the dataset.  This latter, more advanced feature, is made possible through a simple query language that is built into the table and plotter components.  Advanced users who would like to leverage the full flexibility of the Kepler Data Explorer should peruse this section of the documentation to familiarize themselves with the query language.
+    <p>
+        The query language is used in two distinct contexts: to construct filters and to combine and transform planet properties to create new quantities.  The former is used in the Table and Plotter to select a subset of planets to view, the latter is used in the plotter to produce scatter plots and histograms of combinations of planet properties and in the table to construct custom columns.
+    </p>
+    
+    <a name="example_queries" class="section"></a>
+    <H2>Example Queries</H2>
+    <p>
+        Perhaps the simplest way to introduce the query language is to present some examples.  If you would rather jump to a list of available operations and functions skip to <a href="#functions">below</a>.
+    </p>
+    
+    <H4>Example Filters</H4>
+    <ul>
+        <li>
+        <p>
+            The filter:
+        </p>
+        <div class="filter">
+            RPLANET &lt; 2
+        </div>
+        <p>
+            selects all planets with radii smaller than 2 earth radii.  Note that the Column ID <code>RPLANET</code> is used to refer to the planet radius.  The table in the <a href="data"> column definitions </a> help page can be used to lookup column IDs for all KOI properties in the Kepler dataset.
+        </p>
+        </li>
+    
+        <li>
+        <p>
+            The filter:
+        </p>
+        <div class="filter">
+            19 &lt; RA AND RA &lt; 19.5 AND 40 &lt; DEC AND DEC &lt; 42
+        </div>
+        <p>
+            selects all planets with coordinates lying in the range 19&lt;Right Ascension&lt;19.5 and 40&lt;Declination&lt;42.  The query language supports the three basic boolean operations: <code>AND</code>, <code>OR</code>, and <code>NOT</code>.  The equivalent notation <code>&&</code>, <code>||</code>, and <code>!</code> can also be used.
+        </p>
+        </li>
+    
+        <li>
+        <p>
+            The filter:
+        </p>
+        <div class="filter">
+            PER[yrs] &gt;= 1
+        </div>
+        <p>
+            selects all planets with orbital periods (<code>PER</code>) greater then or equal to 1 (Earth) year.  This filter illustrates the use of basic unit conversion in the query language.  The default unit for orbital period is days, however an alternate set of units can be requested by passing the relevant unit ID in square brackets.  Of course, the chosen unit must be valid -- see the section on <a href="#units">units</a> below for more details and for a table of unit IDs.
+        </p>
+        <p>
+            Of course this filter is equivalent to
+        </p>
+        <div class="filter">
+            PER &gt;= 365
+        </div>
+        <p>
+            Alternatively one could scale the PER property directly:
+        </p>
+        <div class="filter">
+            PER/365 &gt;= 1
+        </div>
+        <p> in fact, the Exoplanet Query Language allows for arbitrary mathematical combinations of property IDs and numbers.  Addition (<code>+</code>), division (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), and exponentiation (<code>^</code>) are all supported.
+        </li>
+    
+        <li>
+        <p>
+            The filter:
+        </p>
+        <div class="filter">
+            UPER/PER&lt;=1e-5 AND UPER>0
+        </div>
+        <p>
+            selects all planets with periods accurate to within 1 part in 10<sup>-5</sup>. Note that planet properties can be combined mathematically enabling us to take the ratio of the uncertainty in the orbital period (<code>UPER</code>) to the period (<code>PER</code>).  We include <code>UPER>0</code> to ensure that planets without period uncertainties are not included in the cut.
+        </p>
+        </li>
+        
+        <li>
+            <p>
+            The filter:
+            </p>
+            <div class="filter">
+                CONFIRMED
+            </div>
+            <p>
+                selects all KOI systems that are confirmed planetary candidates.  To select KOI that are both confirmed and strong candidates one can combine the <code>CONFIRMED</code> and <code>STRONG</code> columns:
+            </p>
+            <div class="filter">
+                CONFIRMED || STRONG
+            </div>
+            <p> or even </p>
+            <div class="filter">
+                !(MODERATE || NEEDS_FOLLOWUP)
+            </div>            
+            <p>
+                alternatively, one can use the <code>VETTING_FLAG</code> column as follows:
+            </p>
+            <div class="fitler">
+                VETTING_FLAG &lt;= 2
+            </div>
+            <p>
+                this works because confirmed planets have <code>VETTING_FLAG = 1</code> and strong candidates have <code>VETTING_FLAG = 2</code>
+            </p>
+        </li>
+        
+        <li>
+        <p>
+            The filter:
+        </p>
+        <div class="filter">
+            N_OBJ >= 3
+        </div>
+        <p>
+            selects all KOI systems containing 3 or more KOIs.  It is important to understand that the KOI is the fundamental object stored in the Kepler database -- there are no stellar objects; rather, all stellar system information is stored in KOI objects such that KOI orbiting the same star have the relevant stellar information duplicated amongst them.  Thus to select all systems containing 3 or more KOI one must select all KOI with N_OBJ >= 3.
+        <p>
+            One can emulate stellar searches by first restricting the Database to pick out the first KOI for each system (those KOI's with KOI = XX.01).  One way to do this would be to use the filter:
+        </p>
+        <div class="filter">
+            KOI_OBJ = 1
+        </div>
+        <p>
+            This matches all objects with KOI ID's of the form XX.01.  <code>KOI_OBJ</code> picks out the object component of the KOI ID.  More intuitively, however, one can use the <code>FIRST_OBJECT</code> column to quickly select the first KOI subset of the database.  Since <code>FIRST_OBJECT</code> is a boolean flag the filter is simply:
+        </p>
+        <div class="filter">
+            FIRST_OBJECT
+        </div>
+        </li>
+        <li>
+            <p>
+                The (complicated) filter:
+            </p>
+            <div class="filter">
+                sqrt((RA[deg]-19*15)^2+((DEC[deg]-41)*cos(RA[rad]))^2)&lt;1
+            </div>
+            <p>
+                selects all planets that lie (roughly) within one degree of the coordinate RA=19h, DEC=41&deg;.  This is accomplished by computing the angular distane in degrees between each planet's RA and DEC coordinate and the point (285, 41) using the spherical coordinate metric.  Note the use of the <code>sqrt</code> and <code>cos</code> functions.  The query language supports a number of <a href="#functions">common mathematical functions</a>.
+            </p>                    
+        </li>                
+        </ul>
+    
+        <H4>Example Custom Properties</H4>
+        <p>
+            All of the above examples combine and compare planet properties in order to ultimately produce a true or false cut on each planet in the Kepler database.  This behavior is appropriate in the context of filters.  The query language is also used, however, when constructing custom scatter and histogram plots in the Plotter and custom columns in the table.  In this context, KOI properties can be combined mathematically in order to yield a new <em>numerical</em> quantity for each KOI.  This quantity can then be plotted against other numerical quantities, or presented in the table.  Here are some examples:
+        </p>
+        <ul>
+        <li>
+        <p>
+            The quantity:
+        </p>
+        <div class="filter">
+            RPLANET[rearth]^3
+        </div>
+        <p>
+           approximates the planetary mass (in earth mass units) of the KOI assuming an earth-like density.
+        </p>
+        </li>
+        <li>
+        <p>
+            The quantity:
+        </p>
+        <div class="filter">
+            2*pi*A[m]/PER[s]
+        </div>
+        <p>
+            computes the KOI's orbital velocity in units of meters-per-second.
+        </p>
+        </li>
+    </ul>
+    <a name="functions" class="section"></a>
+    <H2>Supported Operations and Functions</H2>
+    <p>
+        The following operations and functions are supported by the query language.
+    </p>
+    <H4>Supported Mathematical Operators</H4>
+    <table>
+        <tr><th>Symbol</th><th>Operation</th><th>Example</th></tr>
+        <tr><td>+</td><td>Addition</td><td><code>RA + 10</code></td></tr>
+        <tr><td>-</td><td>Subraction</td><td><code>RA - 10</code></td></tr>
+        <tr><td>*</td><td>Multiplication</td><td><code>2*A</code></td></tr>
+        <tr><td>/</td><td>Division</td><td><code>UPER/PER</code></td></tr>
+        <tr><td>%</td><td>Modulo</td><td><code>N_OBJ%2</code></td></tr>                    
+        <tr><td>^,**</td><td>Exponentiation</td><td><code>A^2</code> or <code>A**2</code></td></tr>                                        
+    </table>
+    <H4>Supported Comparison Operators</H4>
+    <table>
+        <tr><th>Symbol</th><th>Operation</th><th>Example</th></tr>
+        <tr><td>&gt;</td><td>Greater-than</td><td><code>DEC &gt; 30</code></td></tr>
+        <tr><td>&lt;</td><td>Less-than</td><td><code>DEC &lt; 50</code></td></tr>
+        <tr><td>&gt;=</td><td>Greater-than-or-equal-to</td><td><code>N_OBJ &gt;= 3</code></td></tr>
+        <tr><td>&lt;=</td><td>Less-than-or-equal-to</td><td><code>N_OBJ &lt;= 3</code></td></tr>
+        <tr><td>=,==</td><td>Equal-to</td><td><code>N_OBJ = 2</code> or <code>N_OBJ == 2</code></td></tr>                    
+        <tr><td>!=</td><td>Not-equal-to</td><td><code>N_OBJ != 2</code></td></tr>                                        
+    </table>
+    <H4>Supported String Comparison Operators</H4>
+    Note: all string comparisons are <strong>case-insensitive</strong>.
+    <table>
+        <tr><th>Symbol</th><th>Operation</th><th>Example</th></tr>
+        <tr><td>CONTAINS</td><td>Subset matching: returns true if any part of the string on the left hand side matches the string on the right hand size</td><td>VETTING_STATUS CONTAINS "Candidate"</td></tr>
+        <tr><td>==</td><td>Identical matching: returns true if the left hand side and right hand side match exactly</td><td>VETTING_STATUS == "Strong Candidate"</td></tr>
+    </table>
+    <H4>Supported Boolean Operators</H4>
+    <table>
+        <tr><th>Symbol</th><th>Operation</th><th>Example</th></tr>
+        <tr><td>&&, AND</td><td>Logical and</td><td><code>DEC &gt; 42 && DEC &lt; 44</code> or <code>DEC &gt; 42 AND DEC &lt; 44</code></td></tr>
+        <tr><td>||, OR</td><td>Logical or</td><td><code>N_OBJ == 2 || N_OBJ == 3</code> or <code>N_OBJ = 2 OR N_OBJ = 3</code></td></tr>
+        <tr><td>!, NOT</td><td>Logical not</td><td><code>!(RECON && ADAPTIVE)</code> or <code>NOT (RECON AND ADAPTIVE)</code></td></tr>
+    </table>
+    <H4>Supported Functions</H4>
+    <table>
+        <tr><th>Symbol</th><th>Operation</th></tr>
+        <tr><td>abs(x)</td><td>Absolute Value</td>
+        <tr><td>asin(x)</td><td>Inverse Trigonometric Sine, returns radians</td></tr>
+        <tr><td>acos(x)</td><td>Inverse Trigonometric Cosine, returns radians</td></tr>
+        <tr><td>atan(x)</td><td>Inverse Trigonometric Tangent, returns radians</td></tr>
+        <tr><td>atan2(y,x)</td><td>C-like arctangent, takes two arguments and returns radians</td></tr>
+        <tr><td>sin(x)</td><td>Trigonometric Sine, accepts radians</td></tr>
+        <tr><td>cos(x)</td><td>Trigonometric Cosine, accepts radians</td></tr>
+        <tr><td>tan(x)</td><td>Trigonometric Tangent, accepts radians</td></tr>
+        <tr><td>ceil(x)</td><td>Takes the ceiling of the passed in number</td></tr>
+        <tr><td>floor(x)</td><td>Takes the floor of the passed in number</td></tr>
+        <tr><td>round(x)</td><td>Rounds the passed in number</td></tr>
+        <tr><td>exp(x)</td><td>Exponential function</td></tr>
+        <tr><td>log(x), ln(x)</td><td>Natural Logarithm (i.e. ln)</td></tr>
+        <tr><td>log10(x)</td><td>Log base 10</td></tr>
+        <tr><td>sqrt(x)</td><td>Square root function</td></tr>
+        <tr><td>max(x,y)</td><td>Returns the larger of x and y</td></tr>
+        <tr><td>min(x,y)</td><td>Returns the smaller of x and y</td></tr>
+    </table>
+    <H4>Support Constants</H4>
+    <table>
+        <tr><th>Symbol</th><th>Description</th></tr>
+        <tr><td>pi</td><td>pi = &pi; = 3.14159....</td></tr>
+        <tr><td>true</td><td>The boolean value <code>true</code></td></tr>
+        <tr><td>false</td><td>The boolean value <code>false</code></td></tr>
+        <tr><td>NaN</td><td>The special not-a-number value <code>NaN</code></td></tr>
+        <tr><td>inf, infinity</td><td>Infinity</td></tr>
+    </table>
+    
+    <a name="units" class="section"></a>
+    <H2>Units</H2>
+    <p>
+        The query language allows for basic unit conversions for columns that have associated units.
+    </p>
+    <table>
+        <tr><th>Physical Class</th><th>Unit</th><th>Unit ID</th></tr>
+        <tr><td rowspan=5 class="row-section odd">Time</td><td>Seconds</td><td>s</td></tr>
+        <tr><td>Minutes</td><td>min</td></tr>
+        <tr><td>Hours</td><td>hrs</td></tr>
+        <tr><td>Days</td><td>days</td></tr>
+        <tr><td>Years</td><td>yrs</td></tr>
+    
+        <tr><td rowspan=9 class="row-section even">Length</td><td>Centimeters</td><td>cm</td></tr>
+        <tr><td>Meters</td><td>m</td></tr>
+        <tr><td>Kilometers</td><td>km</td></tr>
+        <tr><td>Astronomical Units (AU)</td><td>au</td></tr>
+        <tr><td>Light Years</td><td>ly</td></tr>
+        <tr><td>Parsecs</td><td>pc</td></tr>
+        <tr><td>Earth Radii</td><td>rearth</td></tr>
+        <tr><td>Jupiter Radii</td><td>rjupiter</td></tr>
+        <tr><td>Solar Radii</td><td>rsun</td></tr>
+    
+        <tr><td rowspan=5 class="row-section odd">Mass</td><td>Grams</td><td>g</td></tr>
+        <tr><td>Kilograms</td><td>kg</td></tr>
+        <tr><td>Earth Mass</td><td>mearth</td></tr>
+        <tr><td>Jupiter Mass</td><td>mjupiter</td></tr>
+        <tr><td>Solar Mass</td><td>msun</td></tr>
+    
+        <tr><td rowspan=2 class="row-section even">Volume</td><td>Centimeters<sup>3</sup></td><td>cm^3</td></tr>
+        <tr><td>Meters<sup>3</sup></td><td>m^3</td></tr>
+    
+        <tr><td rowspan=2 class="row-section odd">Concentration</td><td>Parts-per-million</td><td>ppm</td></tr>
+        <tr><td>Percentage</td><td>percent</td></tr>
+    
+        <tr><td rowspan=5 class="row-section even">Angle</td><td>Degrees</td><td>deg</td></tr>
+        <tr><td>Radians</td><td>rad</td></tr>
+        <tr><td>Hours</td><td>hr</td></tr>
+        <tr><td>Arcseconds</td><td>arcsec</td></tr>
+        <tr><td>Milliarcseconds</td><td>marcsec</td></tr>
+    
+        <tr><td rowspan=3 class="row-section odd">Temperature</td><td>Kelvin</td><td>K</td></tr>
+        <tr><td>Celcius</td><td>C</td></tr>
+        <tr><td>Fahrenheit</td><td>F</td></tr>                    
+    </table>
+
+
+    </div>
+    
+  </body>
+  </html>
+
+  
