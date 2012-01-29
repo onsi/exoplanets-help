@@ -1,13 +1,13 @@
 
       <html>
   <head>
-  <link href="/Users/onsi/Sites/explorer-help/preview/help.css" rel="stylesheet" type="text/css" />
-  <script src="/Users/onsi/Sites/explorer-help/preview/jquery.js" type="text/javascript"></script>
-  <script src="/Users/onsi/Sites/explorer-help/preview/help.js" type="text/javascript"></script>
+  <link href="/Users/onsi/Sites/explorer-universal/exoplanets/explorer-help/preview/help.css" rel="stylesheet" type="text/css" />
+  <script src="/Users/onsi/Sites/explorer-universal/exoplanets/explorer-help/preview/jquery.js" type="text/javascript"></script>
+  <script src="/Users/onsi/Sites/explorer-universal/exoplanets/explorer-help/preview/help.js" type="text/javascript"></script>
   </head>
   <body>
   <div class="header">
-      <div class="bold header-link">Kepler Explorer</div>
+      <div class="bold header-link">Exoplanets Data Explorer</div>
       <div class="header-link">Help Preview</div>
   </div>
 
@@ -83,18 +83,6 @@
         <td class='divider' colspan=4>Info Columns</td>
     </tr>
     <tr>
-    	<td>KOI</td>
-    	<td>KOI</td>
-    	<td></td>
-    	<td>Kepler Object Of Interest Number</td>
-    </tr>
-    <tr>
-    	<td>KIC</td>
-    	<td>Kepler Input Catalog ID</td>
-    	<td></td>
-    	<td>Kepler Input Catalog Identifier (links to NStED catalog)</td>
-    </tr>
-    <tr>
     	<td>KOI_SYS</td>
     	<td>KOI System</td>
     	<td></td>
@@ -110,13 +98,13 @@
     	<td>FIRST_OBJECT</td>
     	<td>First Object?</td>
     	<td></td>
-    	<td>If Yes, this KOI is the first object in the KOI system. Use this flag to ensure that each KOI system appears only once in the table/plot.</td>
+    	<td>If Yes, this KOI is the first object in the KOI system. Add "FIRST_OBJECT"  in the Filter if you want to ensure that each KOI system appears only once in the table or plot.</td>
     </tr>
     <tr>
     	<td>N_OBJ</td>
     	<td>Number of Objects</td>
     	<td></td>
-    	<td>The number of objects in the KOI system -- a useful quantity when generating plots.</td>
+    	<td>The number of objects in the KOI system is a useful quantity when generating plots.</td>
     </tr>
     <tr>
     	<td>RA</td>
@@ -134,7 +122,7 @@
     	<td>HAB_ZONE</td>
     	<td>Habitable Zone?</td>
     	<td></td>
-    	<td>If Yes, this planet might be in the habitable zone.  The criterion for inclusion the habitable zone is that 183 &le; TPLANET &le; 373.  See Borucki et al for for discussion.</td>
+    	<td>If Yes, this planet might be in the habitable zone.  The criterion for inclusion the habitable zone is that 183 &le; TPLANET &le; 373.  See <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for for discussion.</td>
     </tr>
     
     <tr>
@@ -150,7 +138,7 @@
     	<td>A</td>
     	<td>Semi-Major Axis</td>
     	<td>AU</td>
-    	<td>Semi-major axis of orbit. Based on Newton's generalization of Kepler's third law and the stellar mass.</td>
+    	<td>Semi-major axis of orbit. This is the longer dimension of the ellipse-shaped orbit, based on Newton's generalization of Kepler's third law and the stellar mass.  For a circular orbit, A is the orbit radius.</td>
     </tr>
     <tr>
     	<td>AR</td>
@@ -180,7 +168,7 @@
     	<td>TPLANET</td>
     	<td>Planet Temperature</td>
     	<td>&deg;Kelvin</td>
-    	<td>Equilibrium temperature of planet. See Borucki et al for discussion.</td>
+    	<td>Equilibrium temperature of planet. See <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for discussion.</td>
     </tr>
     
     <tr>
@@ -226,7 +214,7 @@
     	<td>IMPACT</td>
     	<td>Impact Parameter</td>
     	<td></td>
-    	<td>Impact parameter of transit. Note that there is a strong co-variance between b and a/R*.</td>
+    	<td>Impact parameter of transit. Note that there is a strong co-variance between the Impact Parameter b and a/R*.</td>
     </tr>
     <tr>
     	<td>UIMPACT</td>
@@ -336,7 +324,7 @@
     	<td>EBPROB</td>
     	<td>Eclipsing Binary Probability</td>
     	<td></td>
-    	<td>Probability of background eclipsing binary. Confused with planet's host star (see Borucki et al for discussion).</td>
+    	<td>Probability of background eclipsing binary. Confused with planet's host star (see <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for discussion).</td>
     </tr>
     
     <tr>

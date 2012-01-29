@@ -21,7 +21,7 @@ head = <<-HEAD
   </head>
   <body>
   <div class="header">
-      <div class="bold header-link">Kepler Explorer</div>
+      <div class="bold header-link">Exoplanets Data Explorer</div>
       <div class="header-link">Help Preview</div>
   </div>
 HEAD
