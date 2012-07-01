@@ -73,298 +73,2187 @@
 
 <table>
     <tr>
-        <th>Column ID</th>
-        <th>Name</th>
-        <th>Units</th>
-        <th>Description</th>
-    </tr>
-    
-    <tr>
-        <td class='divider' colspan=4>Info Columns</td>
-    </tr>
-    <tr>
-    	<td>KOI_SYS</td>
-    	<td>KOI System</td>
-    	<td></td>
-    	<td>The system component of the KOI</td>
+        <th>
+            Column ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Units
+        </th>
+        <th>
+            Description
+        </th>
     </tr>
     <tr>
-    	<td>KOI_OBJ</td>
-    	<td>KOI Object</td>
-    	<td></td>
-    	<td>The object component of the KOI</td>
+        <td class='divider' colspan=4>
+            Info
+        </td>
     </tr>
     <tr>
-    	<td>FIRST_OBJECT</td>
-    	<td>First Object?</td>
-    	<td></td>
-    	<td>If Yes, this KOI is the first object in the KOI system. Add "FIRST_OBJECT"  in the Filter if you want to ensure that each KOI system appears only once in the table or plot.</td>
+        <td>
+            NAME
+        </td>
+        <td>
+            Name
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Standard Name for the star + planet name.
+        </td>
     </tr>
     <tr>
-    	<td>N_OBJ</td>
-    	<td>Number of Objects</td>
-    	<td></td>
-    	<td>The number of objects in the KOI system is a useful quantity when generating plots.</td>
+        <td>
+            OTHERNAME
+        </td>
+        <td>
+            Other Name
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Other Name for the planet.
+        </td>
     </tr>
     <tr>
-    	<td>RA</td>
-    	<td>Right Ascension</td>
-    	<td>Hours</td>
-    	<td>Right Ascension (J2000)</td>
+        <td>
+            COMP
+        </td>
+        <td>
+            Planet Name
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            lower case letter, b, c, d, designates planets in order of discovery.
+        </td>
     </tr>
     <tr>
-    	<td>DEC</td>
-    	<td>Declination</td>
-    	<td>Degrees</td>
-    	<td>Declination (J2000)</td>
+        <td>
+            HD
+        </td>
+        <td>
+            HD #
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Number in Henry Draper catalog
+        </td>
     </tr>
     <tr>
-    	<td>HAB_ZONE</td>
-    	<td>Habitable Zone?</td>
-    	<td></td>
-    	<td>If Yes, this planet might be in the habitable zone.  The criterion for inclusion the habitable zone is that 183 &le; TPLANET &le; 373.  See <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for for discussion.</td>
-    </tr>
-    
-    <tr>
-        <td class='divider' colspan=4>Planet Properties</td>
-    </tr>
-    <tr>
-    	<td>RPLANET</td>
-    	<td>Planetary Radius</td>
-    	<td>Earth Radii</td>
-    	<td>Planetary Radius</td>
+        <td>
+            HR
+        </td>
+        <td>
+            HR #
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Number in Bright Star Catalog.
+        </td>
     </tr>
     <tr>
-    	<td>A</td>
-    	<td>Semi-Major Axis</td>
-    	<td>AU</td>
-    	<td>Semi-major axis of orbit. This is the longer dimension of the ellipse-shaped orbit, based on Newton's generalization of Kepler's third law and the stellar mass.  For a circular orbit, A is the orbit radius.</td>
+        <td>
+            HIPP
+        </td>
+        <td>
+            Hipparcos Catalog #
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Number of star in Hipparcos Catalog.
+        </td>
     </tr>
     <tr>
-    	<td>AR</td>
-    	<td>a/R*</td>
-    	<td></td>
-    	<td>Ratio of semi-major axis to stellar radius. Assuming zero eccentricity, a parameter derived from the lightcurve. Note for planets in non-circular orbits, a/R* is the scaled planet-star separation at the time of transit.</td>
+        <td>
+            SAO
+        </td>
+        <td>
+            SAO Catalog #
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Number in Smithsonian Astrophysical Observatory Catalog of Stars.
+        </td>
     </tr>
     <tr>
-    	<td>UAR</td>
-    	<td>Uncertainty in AR</td>
-    	<td></td>
-    	<td>Uncertainty in AR</td>
+        <td>
+            GL
+        </td>
+        <td>
+            Gliese Catalog #
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Number of Gliese-Jahreiss Catalog of Nearby Stars (within 25 pc).
+        </td>
     </tr>
     <tr>
-    	<td>RR</td>
-    	<td>r/R*</td>
-    	<td></td>
-    	<td>Ratio of planet radius to stellar radius</td>
+        <td>
+            BINARY
+        </td>
+        <td>
+            Binary Flag
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            0 indicates single star, 1 indicates binary or multiple star system.
+        </td>
     </tr>
     <tr>
-    	<td>URR</td>
-    	<td>Uncertainty in RR</td>
-    	<td></td>
-    	<td>Uncertainty in RR</td>
+        <td>
+            RA
+        </td>
+        <td>
+            RA
+        </td>
+        <td>
+            Hours
+        </td>
+        <td>
+            Right Ascension in decimal form (hours). J2000, epoch 2000, from Simbad
+        </td>
     </tr>
     <tr>
-    	<td>TPLANET</td>
-    	<td>Planet Temperature</td>
-    	<td>&deg;Kelvin</td>
-    	<td>Equilibrium temperature of planet. See <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for discussion.</td>
-    </tr>
-    
-    <tr>
-        <td class='divider' colspan=4>Transit Properties</td>
-    </tr>
-    <tr>
-    	<td>T0</td>
-    	<td>Time of Transit Center</td>
-    	<td>BJD-2454900</td>
-    	<td>Time of a transit center; BJD-2454900. Based on a linear fit to all observed transits.</td>
+        <td>
+            DEC
+        </td>
+        <td>
+            DEC
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            Declination in decimal form (degrees). J2000, epoch 2000, from Simbad
+        </td>
     </tr>
     <tr>
-    	<td>UT0</td>
-    	<td>Uncertainty in T0</td>
-    	<td>Days</td>
-    	<td>Uncertainty in T0</td>
+        <td>
+            RA_STRING
+        </td>
+        <td>
+            RA (h:m:s)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Right Ascension. J2000, epoch 2000, from Simbad
+        </td>
     </tr>
     <tr>
-    	<td>DUR</td>
-    	<td>Transit Duration</td>
-    	<td>Hours</td>
-    	<td>Transit duration, first contact to last contact.</td>
+        <td>
+            DEC_STRING
+        </td>
+        <td>
+            DEC (d:m:s)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Declination. J2000, epoch 2000, from Simbad
+        </td>
     </tr>
     <tr>
-    	<td>PER</td>
-    	<td>Period</td>
-    	<td>Days</td>
-    	<td>Average interval between transits. Based on a linear fit to all observed transits.</td>
+        <td class='divider' colspan=4>
+            Stellar Parms
+        </td>
     </tr>
     <tr>
-    	<td>UPER</td>
-    	<td>Uncertainty in PER</td>
-    	<td>Days</td>
-    	<td>Uncertainty in PER</td>
+        <td>
+            BMV
+        </td>
+        <td>
+            B-V
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            B-V color  (blue - visual magnitudes).
+        </td>
     </tr>
     <tr>
-    	<td>DEPTH</td>
-    	<td>Transit Depth</td>
-    	<td>Parts-per-million</td>
-    	<td>Transit depth at center of transit.</td>
+        <td>
+            V
+        </td>
+        <td>
+            V mag
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            V-band magnitude (visual) of the host star [mag].
+        </td>
     </tr>
     <tr>
-    	<td>IMPACT</td>
-    	<td>Impact Parameter</td>
-    	<td></td>
-    	<td>Impact parameter of transit. Note that there is a strong co-variance between the Impact Parameter b and a/R*.</td>
+        <td>
+            J
+        </td>
+        <td>
+            2MASS J
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            2MASS J magnitude for stars.
+        </td>
     </tr>
     <tr>
-    	<td>UIMPACT</td>
-    	<td>Uncertainty in IMPACT</td>
-    	<td></td>
-    	<td>Uncertainty in IMPACT</td>
+        <td>
+            H
+        </td>
+        <td>
+            2MASS H
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            2MASS H magnitude for stars.
+        </td>
     </tr>
     <tr>
-    	<td>SNR</td>
-    	<td>Transit Signal-to-Noise Ratio</td>
-    	<td></td>
-    	<td>Total signal to noise ratio of all transits detected. SNR = DEPTH/(STD*sqrt(N)) where STD is the standard deviation of all data outside of transits.</td>
-    </tr>
-    
-    <tr>
-        <td class='divider' colspan=4>Stellar Properties</td>
-    </tr>
-    <tr>
-    	<td>RSTAR</td>
-    	<td>Stellar Radius</td>
-    	<td>Solar Radii</td>
-    	<td>Stellar radius reported by KIC. If TSTAR_FLAG = 1, then R is based on J-K interpolation.</td>
+        <td>
+            KS
+        </td>
+        <td>
+            2MASS K<sub>S</sub>
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            2MASS KS magnitude for stars.
+        </td>
     </tr>
     <tr>
-    	<td>MSTAR</td>
-    	<td>Stellar Mass</td>
-    	<td>Solar Masses</td>
-    	<td>Stellar mass derived from log(g) and stellar radius.</td>
+        <td>
+            DIST
+        </td>
+        <td>
+            Distance to Star
+        </td>
+        <td>
+            Parsecs
+        </td>
+        <td>
+            Distance to planetary system based on parallax.
+        </td>
     </tr>
     <tr>
-    	<td>TSTAR</td>
-    	<td>Tstar</td>
-    	<td>&deg;Kelvin</td>
-    	<td>Effective Temperature of host star as reported in the KIC. If TSTAR_FLAG= 1, then TSTAR , LOGG, RSTAR derived using KIC J-K colour and linear interpolation of luminosity class V stellar properties of Schmidt-Kaler (1982).</td>
+        <td>
+            DISTUPPER
+        </td>
+        <td>
+            Positive uncertainty in Distance to Star
+        </td>
+        <td>
+            Parsecs
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>TSTAR_FLAG</td>
-    	<td>T<sub>star</sub> Flag</td>
-    	<td></td>
-    	<td>If Yes, then TSTAR, LOGG, RSTAR are derived using KIC J-K colour and linear interpolation of luminosity class V stellar properties of Schmidt-Kaler (1982).</td>
+        <td>
+            DISTLOWER
+        </td>
+        <td>
+            Negative uncertainty in Distance to Star
+        </td>
+        <td>
+            Parsecs
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>LOGG</td>
-    	<td>Log(g)</td>
-    	<td>CGS units</td>
-    	<td>Surface gravity reported by KIC. If TSTAR_FLAG = 1, then log(g) is based on J-K interpolation. (cgs units)</td>
+        <td>
+            UDIST
+        </td>
+        <td>
+            Uncertainty in Distance to Star
+        </td>
+        <td>
+            Parsecs
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>KMAG</td>
-    	<td>Kepler Magnitude</td>
-    	<td>Kepler Magnitude</td>
-    	<td>Kepler Magnitude</td>
+        <td>
+            PAR
+        </td>
+        <td>
+            Parallax
+        </td>
+        <td>
+            Milliarcseconds
+        </td>
+        <td>
+            Measured Parallax, usually from Hipparcos Catalog.
+        </td>
     </tr>
     <tr>
-    	<td>CDPP</td>
-    	<td>CDPP</td>
-    	<td>Parts-per-million</td>
-    	<td>6 hr Combined Differential Photometric Precision from Quarter 3</td>
-    </tr>
-    
-    <tr>
-        <td class='divider' colspan=4>Status</td>
-    </tr>
-    <tr>
-    	<td>VETTING</td>
-    	<td>Vetting Status</td>
-    	<td></td>
-    	<td>Vetting status of KOI:<br>Confirmed: Confirmed and published planet.<br>Strong Candidate: Strong probability candidate, cleanly passes tests that were applied.<br>Moderate Candidate: Moderate probability candidate, not all tests cleanly passed but no definite test failures.<br>Insufficient Followup: Insufficient follow-up to perform full suite of vetting tests.</td>
+        <td>
+            PARUPPER
+        </td>
+        <td>
+            Positive uncertainty in Parallax
+        </td>
+        <td>
+            Milliarcseconds
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>VETTING_FLAG</td>
-    	<td>Vetting Flag</td>
-    	<td></td>
-    	<td>Numerical representation of Vetting Status<br>1: Confirmed and published planet.<br>2: Strong probability candidate, cleanly passes tests that were applied.<br>3: Moderate probability candidate, not all tests cleanly passed but no definite test failures.<br>4: Insufficient follow-up to perform full suite of vetting tests.</td>
+        <td>
+            PARLOWER
+        </td>
+        <td>
+            Negative uncertainty in Parallax
+        </td>
+        <td>
+            Milliarcseconds
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>CONFIRMED</td>
-    	<td>Confirmed?</td>
-    	<td></td>
-    	<td>If Yes, this KOI is a confirmed and published planet.</td>
+        <td>
+            UPAR
+        </td>
+        <td>
+            Uncertainty in Parallax
+        </td>
+        <td>
+            Milliarcseconds
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>STRONG</td>
-    	<td>Strong Candidate?</td>
-    	<td></td>
-    	<td>If Yes, this KOI is a strong probability candidate that cleanly passes tests that were applied.</td>
+        <td>
+            VSINI
+        </td>
+        <td>
+            Vsin(i)
+        </td>
+        <td>
+            Kilometers/Seconds
+        </td>
+        <td>
+            Equatorial velocity of star times the sine of the inclination of the star's axis (i = 0 implies pole-on).
+        </td>
     </tr>
     <tr>
-    	<td>MODERATE</td>
-    	<td>Moderate Candidate?</td>
-    	<td></td>
-    	<td>If Yes, this KOI is a moderate probability candidate did not pass all tests cleanly but has no definite test failures.</td>
+        <td>
+            VSINIUPPER
+        </td>
+        <td>
+            Positive uncertainty in Vsin(i)
+        </td>
+        <td>
+            Kilometers/Seconds
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>NEEDS_FOLLOWUP</td>
-    	<td>Needs Followup?</td>
-    	<td></td>
-    	<td>If Yes, there has been insufficient follow-up to perform a full suite of vetting tests.</td>
+        <td>
+            VSINILOWER
+        </td>
+        <td>
+            Negative uncertainty in Vsin(i)
+        </td>
+        <td>
+            Kilometers/Seconds
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>SINGLE_TRANSIT</td>
-    	<td>Single Transit?</td>
-    	<td></td>
-    	<td>If Yes, this KOI was detected on the basis of a single transit with the period derived from the transit duration and stellar radius.</td>
+        <td>
+            UVSINI
+        </td>
+        <td>
+            Uncertainty in Vsin(i)
+        </td>
+        <td>
+            Kilometers/Seconds
+        </td>
+        <td>
+            
+        </td>
     </tr>
     <tr>
-    	<td>EBPROB</td>
-    	<td>Eclipsing Binary Probability</td>
-    	<td></td>
-    	<td>Probability of background eclipsing binary. Confused with planet's host star (see <a href="http://xxx.lanl.gov/abs/1102.0541v1">Borucki et al</a> for discussion).</td>
-    </tr>
-    
-    <tr>
-        <td class='divider' colspan=4>Observations</td>
+        <td class='divider' colspan=4>
+            Orbit Parms
+        </td>
     </tr>
     <tr>
-    	<td>RECON</td>
-    	<td>Reconnaissance Spectra?</td>
-    	<td></td>
-    	<td>If Yes, reconnaissance spectra of this KOI have been taken.</td>
+        <td>
+            PER
+        </td>
+        <td>
+            Orbital Period
+        </td>
+        <td>
+            Days
+        </td>
+        <td>
+            The orbital period fo the planet.
+        </td>
     </tr>
     <tr>
-    	<td>ADAPTIVE</td>
-    	<td>Adaptive Optics Observations?</td>
-    	<td></td>
-    	<td>If Yes, adaptive optics observations of this KOI have been taken.</td>
+        <td>
+            ECC
+        </td>
+        <td>
+            Orbital Eccentricity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The eccentricity of the orbit, on the usual scale of 0 to 1, where 0 is circular and 1 is extremely flattened.
+        </td>
     </tr>
     <tr>
-    	<td>SPECKLE</td>
-    	<td>Speckle Observations?</td>
-    	<td></td>
-    	<td>If Yes, speckle observations of this KOI have been taken.</td>
+        <td>
+            OM
+        </td>
+        <td>
+            Argument of Periastron
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            Angle between the line of nodes and the line from star to the planet at periastron, in the plane of the orbit.
+        </td>
     </tr>
     <tr>
-    	<td>RV10</td>
-    	<td>10 m/s RV Spectra?</td>
-    	<td></td>
-    	<td>If Yes, 10 m/s RV spectra of this KOI have been taken.</td>
+        <td>
+            K
+        </td>
+        <td>
+            Velocity Semiamplitude
+        </td>
+        <td>
+            Meters/Seconds
+        </td>
+        <td>
+            The semiamplitude of the Doppler variation (half of the peak-to-peak radial velocity variation.).
+        </td>
     </tr>
     <tr>
-    	<td>RV2</td>
-    	<td>2 m/s RV Spectra?</td>
-    	<td></td>
-    	<td>If Yes, 2 m/s RV spectra of this KOI have been taken.</td>
+        <td>
+            T0
+        </td>
+        <td>
+            Time of Periastron
+        </td>
+        <td>
+            JD
+        </td>
+        <td>
+            The time of one periastron passage of the planet in JD.
+        </td>
     </tr>
     <tr>
-    	<td>NOOBS</td>
-    	<td>No Observations?</td>
-    	<td></td>
-    	<td>If Yes, this KOI has not had any observations taken yet.</td>
+        <td>
+            DVDT
+        </td>
+        <td>
+            Velocity Slope
+        </td>
+        <td>
+            Meters/Seconds/Days
+        </td>
+        <td>
+            Residual, linear trend in velocities due to additional, long period companions.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            MSINI
+        </td>
+        <td>
+            Msin(i)
+        </td>
+        <td>
+            Jupiter Mass
+        </td>
+        <td>
+            Minimum mass of planet.  True masses are typically higher by about 15% due to the geometric effects of inclination.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            A
+        </td>
+        <td>
+            Semi-Major Axis
+        </td>
+        <td>
+            Astronomical Units (AU)
+        </td>
+        <td>
+            Semi-major axis.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TREND
+        </td>
+        <td>
+            Flag for linear Trend
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Flag indicating that a linear trend was (1) or was not (0) added to the Keplerian mode, usually indicating a second, distant orbiting companion.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            LAMBDA
+        </td>
+        <td>
+            Spin-Orbit Misalignment
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            Sping-Orbit Misalignment
+        </td>
+    </tr>
+    <tr>
+        <td>
+            LAMBDAUPPER
+        </td>
+        <td>
+            Positive uncertainty in Spin-Orbit Misalignment
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            LAMBDALOWER
+        </td>
+        <td>
+            Negative uncertainty in Spin-Orbit Misalignment
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ULAMBDA
+        </td>
+        <td>
+            Uncertainty in Spin-Orbit Misalignment
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            &sigma; Orbit
+        </td>
+    </tr>
+    <tr>
+        <td>
+            PERUPPER
+        </td>
+        <td>
+            Positive uncertainty in Orbital Period
+        </td>
+        <td>
+            Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            PERLOWER
+        </td>
+        <td>
+            Negative uncertainty in Orbital Period
+        </td>
+        <td>
+            Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UPER
+        </td>
+        <td>
+            Uncertainty in Orbital Period
+        </td>
+        <td>
+            Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ECCUPPER
+        </td>
+        <td>
+            Positive uncertainty in Orbital Eccentricity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ECCLOWER
+        </td>
+        <td>
+            Negative uncertainty in Orbital Eccentricity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UECC
+        </td>
+        <td>
+            Uncertainty in Orbital Eccentricity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            OMUPPER
+        </td>
+        <td>
+            Positive uncertainty in Argument of Periastron
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            OMLOWER
+        </td>
+        <td>
+            Negative uncertainty in Argument of Periastron
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UOM
+        </td>
+        <td>
+            Uncertainty in Argument of Periastron
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            KUPPER
+        </td>
+        <td>
+            Positive uncertainty in Velocity Semiamplitude
+        </td>
+        <td>
+            Meters/Seconds
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            KLOWER
+        </td>
+        <td>
+            Negative uncertainty in Velocity Semiamplitude
+        </td>
+        <td>
+            Meters/Seconds
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UK
+        </td>
+        <td>
+            Uncertainty in Velocity Semiamplitude
+        </td>
+        <td>
+            Meters/Seconds
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            T0UPPER
+        </td>
+        <td>
+            Positive uncertainty in Time of Periastron
+        </td>
+        <td>
+            JD
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            T0LOWER
+        </td>
+        <td>
+            Negative uncertainty in Time of Periastron
+        </td>
+        <td>
+            JD
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DVDTUPPER
+        </td>
+        <td>
+            Positive uncertainty in Velocity Slope
+        </td>
+        <td>
+            Meters/Seconds/Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DVDTLOWER
+        </td>
+        <td>
+            Negative uncertainty in Velocity Slope
+        </td>
+        <td>
+            Meters/Seconds/Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UDVDT
+        </td>
+        <td>
+            Uncertainty in Velocity Slope
+        </td>
+        <td>
+            Meters/Seconds/Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            MSINIUPPER
+        </td>
+        <td>
+            Positive uncertainty in Msin(i)
+        </td>
+        <td>
+            Jupiter Mass
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            MSINILOWER
+        </td>
+        <td>
+            Negative uncertainty in Msin(i)
+        </td>
+        <td>
+            Jupiter Mass
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UMSINI
+        </td>
+        <td>
+            Uncertainty in Msin(i)
+        </td>
+        <td>
+            Jupiter Mass
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            AUPPER
+        </td>
+        <td>
+            Positive uncertainty in Semi-Major Axis
+        </td>
+        <td>
+            Astronomical Units (AU)
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ALOWER
+        </td>
+        <td>
+            Negative uncertainty in Semi-Major Axis
+        </td>
+        <td>
+            Astronomical Units (AU)
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UA
+        </td>
+        <td>
+            Uncertainty in Semi-Major Axis
+        </td>
+        <td>
+            Astronomical Units (AU)
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            Transit Parms
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DEPTH
+        </td>
+        <td>
+            Transit Depth
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Transit depth [(R<sub>p</sub>/R<sub>star</sub>)<sup>2</sup> - i.e. dimensionless]
+        </td>
+    </tr>
+    <tr>
+        <td>
+            T14
+        </td>
+        <td>
+            Duration of Transit
+        </td>
+        <td>
+            Days
+        </td>
+        <td>
+            Duration of transit (1st to 4th contact)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TT
+        </td>
+        <td>
+            Epoch of Transit Center
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Epoch (time) of transit center [JD-2440000]
+        </td>
+    </tr>
+    <tr>
+        <td>
+            I
+        </td>
+        <td>
+            Orbit Inclination
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            Inclination of orbit (transits only)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            R
+        </td>
+        <td>
+            Planetary Radius
+        </td>
+        <td>
+            Jupiter Radii
+        </td>
+        <td>
+            Planetary radius.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            AR
+        </td>
+        <td>
+            a/R<sub>*</sub>
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The ratio of the semimajor axis of a planet to the stellar radius.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            B
+        </td>
+        <td>
+            Impact Parameter
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Impact parameter [stellar radii]
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DENSITY
+        </td>
+        <td>
+            Planetary Density
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            Planetary density.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            GRAVITY
+        </td>
+        <td>
+            Surface Gravity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Planetary surface gravity [log<sub>10</sub>(cm/s^2)]
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TRANSIT
+        </td>
+        <td>
+            Transit
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            0 indicates that no transit is known, 1 indicates that a transit of the planet was seen.
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            &sigma; Transit
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DEPTHUPPER
+        </td>
+        <td>
+            Positive uncertainty in Transit Depth
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            T14UPPER
+        </td>
+        <td>
+            Positive uncertainty in Duration of Transit
+        </td>
+        <td>
+            Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            T14LOWER
+        </td>
+        <td>
+            Negative uncertainty in Duration of Transit
+        </td>
+        <td>
+            Days
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TTUPPER
+        </td>
+        <td>
+            Positive uncertainty in Epoch of Transit Center
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TTLOWER
+        </td>
+        <td>
+            Negative uncertainty in Epoch of Transit Center
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UTT
+        </td>
+        <td>
+            Uncertainty in Epoch of Transit Center
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            IUPPER
+        </td>
+        <td>
+            Positive uncertainty in Orbit Inclination
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RUPPER
+        </td>
+        <td>
+            Positive uncertainty in Planetary Radius
+        </td>
+        <td>
+            Jupiter Radii
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RLOWER
+        </td>
+        <td>
+            Negative uncertainty in Planetary Radius
+        </td>
+        <td>
+            Jupiter Radii
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UR
+        </td>
+        <td>
+            Uncertainty in Planetary Radius
+        </td>
+        <td>
+            Jupiter Radii
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ARUPPER
+        </td>
+        <td>
+            Positive uncertainty in a/R<sub>*</sub>
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            BUPPER
+        </td>
+        <td>
+            Positive uncertainty in Impact Parameter
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DENSITYUPPER
+        </td>
+        <td>
+            Positive uncertainty in Planetary Density
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DENSITYLOWER
+        </td>
+        <td>
+            Negative uncertainty in Planetary Density
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UDENSITY
+        </td>
+        <td>
+            Uncertainty in Planetary Density
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            GRAVITYUPPER
+        </td>
+        <td>
+            Positive uncertainty in Surface Gravity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            GRAVITYLOWER
+        </td>
+        <td>
+            Negative uncertainty in Surface Gravity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UGRAVITY
+        </td>
+        <td>
+            Uncertainty in Surface Gravity
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ILOWER
+        </td>
+        <td>
+            Negative uncertainty in Orbit Inclination
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UI
+        </td>
+        <td>
+            Uncertainty in Orbit Inclination
+        </td>
+        <td>
+            Degrees
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ARLOWER
+        </td>
+        <td>
+            Negative uncertainty in a/R<sub>*</sub>
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UAR
+        </td>
+        <td>
+            Uncertainty in a/R<sub>*</sub>
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            BLOWER
+        </td>
+        <td>
+            Negative uncertainty in Impact Parameter
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UB
+        </td>
+        <td>
+            Uncertainty in Impact Parameter
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DEPTHLOWER
+        </td>
+        <td>
+            Negative uncertainty in Transit Depth
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UDEPTH
+        </td>
+        <td>
+            Uncertainty in Transit Depth
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            SE Depth
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SE
+        </td>
+        <td>
+            Secondary Eclipse
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            0 indicates that no secondary eclipse has been detected; 1 indicates at least one secondary eclipse has been detected in the wavelengths listed below.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTHJ
+        </td>
+        <td>
+            Secondary eclipse depth in J band
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured in the near infrared J band centered at 1.25 micron.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTHH
+        </td>
+        <td>
+            Secondary eclipse depth in H band
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured in the near infrared H band centered at 1.65 micron.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTHKS
+        </td>
+        <td>
+            Secondary eclipse depth in Ks band
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured in the near infrared Ks band centered at 2.15 micron.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTHKP
+        </td>
+        <td>
+            Secondary eclipse depth in the Kepler photometry band
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured in the Kepler photometry band in the optical from 400 to 865 nm.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTH36
+        </td>
+        <td>
+            Secondary eclipse depth in 3.6 micron
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured with Spitzer in its IRAC1 band centered at 3.6 micron.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTH45
+        </td>
+        <td>
+            Secondary eclipse depth in 4.5 micron
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured by Spitzer in its IRAC2 band centered at 4.5 micron.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTH58
+        </td>
+        <td>
+            Secondary eclipse depth in 5.8 micron
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured by Spitzer in its IRAC3 band centered at 5.8 micron.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEDEPTH80
+        </td>
+        <td>
+            Secondary eclipse depth in 8.0 micron
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The secondary eclipse depth measured by Spitzer in its IRAC4 band centered at 8.0 micron.
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            Fit & Ref
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RMS
+        </td>
+        <td>
+            RMS of Velocities
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The RMS of the velocity residuals to the Keplerian model.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            CHI2
+        </td>
+        <td>
+            Reduced Chi Squared
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Reduced chi-square of the velocities (including jitter).
+        </td>
+    </tr>
+    <tr>
+        <td>
+            NOBS
+        </td>
+        <td>
+            # of Observations
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Number of Doppler observations.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            NCOMP
+        </td>
+        <td>
+            Components
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Number of planets known in the system.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            MULT
+        </td>
+        <td>
+            Multiple Flag
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Multiple planets (1) or only a single planet (0).
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DISCMETH
+        </td>
+        <td>
+            Method of Discovery
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Potential fields are Transit and RV
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DATE
+        </td>
+        <td>
+            First Publication Date
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            First publication date.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            FIRSTREF
+        </td>
+        <td>
+            First Reference
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            First peer reviewed published orbit.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ORBREF
+        </td>
+        <td>
+            Orbit Reference
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Reference to orbit in this table.
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            Star
+        </td>
+    </tr>
+    <tr>
+        <td>
+            STAR
+        </td>
+        <td>
+            Star Name
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Standard Name for the star.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            MSTAR
+        </td>
+        <td>
+            Mass of Star
+        </td>
+        <td>
+            Solar Mass
+        </td>
+        <td>
+            Estimated mass of the star, usually based on associating the star's effective temperature and luminosity with stellar models.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RSTAR
+        </td>
+        <td>
+            Radius of Star
+        </td>
+        <td>
+            Solar Radii
+        </td>
+        <td>
+            Estimated radius of the star.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TEFF
+        </td>
+        <td>
+            T<sub>eff</sub>
+        </td>
+        <td>
+            Kelvin
+        </td>
+        <td>
+            Effective temperature of star.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RHOSTAR
+        </td>
+        <td>
+            Density of star
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            Density of star as measured from transit photometry and radial velocity information.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            LOGG
+        </td>
+        <td>
+            log<sub>10</sub>(g)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            log<sub>10</sub> of the gravity at the surface of the star (cgs units).
+        </td>
+    </tr>
+    <tr>
+        <td>
+            FE
+        </td>
+        <td>
+            [Fe/H]
+        </td>
+        <td>
+            
+        </td>
+        <td>
+             Ratio of Fe to H, relative to that in the Sun, on a log scale with solar being 0.0, and -1.0 being 1/10 solar abundance.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SHK
+        </td>
+        <td>
+            S<sub>HK</sub>
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The Mt Wilson "S Value", a measure of the emission at the cores of the Calcium H&K lines.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RHK
+        </td>
+        <td>
+            log R<sub>HK</sub>
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            The chromospheric emission in the cores of the Calcium H&K lines, indicating magnetic activity on the star.
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            &sigma; Star
+        </td>
+    </tr>
+    <tr>
+        <td>
+            MSTARUPPER
+        </td>
+        <td>
+            Positive uncertainty in Mass of Star
+        </td>
+        <td>
+            Solar Mass
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            MSTARLOWER
+        </td>
+        <td>
+            Negative uncertainty in Mass of Star
+        </td>
+        <td>
+            Solar Mass
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UMSTAR
+        </td>
+        <td>
+            Uncertainty in Mass of Star
+        </td>
+        <td>
+            Solar Mass
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RSTARUPPER
+        </td>
+        <td>
+            Positive uncertainty in Radius of Star
+        </td>
+        <td>
+            Solar Radii
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RSTARLOWER
+        </td>
+        <td>
+            Negative uncertainty in Radius of Star
+        </td>
+        <td>
+            Solar Radii
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            URSTAR
+        </td>
+        <td>
+            Uncertainty in Radius of Star
+        </td>
+        <td>
+            Solar Radii
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TEFFUPPER
+        </td>
+        <td>
+            Positive uncertainty in T<sub>eff</sub>
+        </td>
+        <td>
+            Kelvin
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            TEFFLOWER
+        </td>
+        <td>
+            Negative uncertainty in T<sub>eff</sub>
+        </td>
+        <td>
+            Kelvin
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UTEFF
+        </td>
+        <td>
+            Uncertainty in T<sub>eff</sub>
+        </td>
+        <td>
+            Kelvin
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RHOSTARUPPER
+        </td>
+        <td>
+            Positive uncertainty in Density of star
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            RHOSTARLOWER
+        </td>
+        <td>
+            Negative uncertainty in Density of star
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            URHOSTAR
+        </td>
+        <td>
+            Uncertainty in Density of star
+        </td>
+        <td>
+            Grams/Centimeters<sup>3</sup>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            LOGGUPPER
+        </td>
+        <td>
+            Positive uncertainty in log<sub>10</sub>(g)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            LOGGLOWER
+        </td>
+        <td>
+            Negative uncertainty in log<sub>10</sub>(g)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ULOGG
+        </td>
+        <td>
+            Uncertainty in log<sub>10</sub>(g)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            FEUPPER
+        </td>
+        <td>
+            Positive uncertainty in [Fe/H]
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            FELOWER
+        </td>
+        <td>
+            Negative uncertainty in [Fe/H]
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            UFE
+        </td>
+        <td>
+            Uncertainty in [Fe/H]
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td class='divider' colspan=4>
+            Links
+        </td>
+    </tr>
+    <tr>
+        <td>
+            JSNAME
+        </td>
+        <td>
+            EPE Link
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Link to this planet in the Extrasolar Planets Encyclopaedia (exoplanet.eu) database.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ETDNAME
+        </td>
+        <td>
+            ETD Link
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Link to this planet in the Exoplanet Transit Database (var2.astro.cz/ETD).
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SIMBADNAME
+        </td>
+        <td>
+            SIMBAD Link
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Link to this planet in the SIMBAD (simbad.harvard.edu) database.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            NSTEDID
+        </td>
+        <td>
+            NStED Link
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            Link to this planet's star in the NStED (nsted.ipac.caltech.edu) database.
+        </td>
     </tr>
 </table>
     </div>
